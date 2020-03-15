@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link type="text/css" rel="stylesheet" href="./index.css">
+</head>
+<body>
+<input id="input_1">
+<ol style="list-style: none" id="list_1">
+
+</ol>
+
+</body>
+<script type="text/javascript">
+  let arr = []
+  // function myFunction(e) {
+  //   if (e.key == "Enter") {
+  //     arr.push(document.getElementById("input_1").value)
+  //     document.getElementById("input_1").value = ''
+  //     console.log(arr)
+  //   }
+  // }
+
+
+  document.getElementById("input_1").addEventListener("keypress", function (e) {
+    var oli = document.getElementsByTagName("li");
+    // arr.forEach(item => {
+    //   if (item.indexOf(document.getElementById("input_1").value) != -1) {
+    //
+    //   }
+    // })
+
+    if (e.key == "Enter") {
+      arr.push(document.getElementById("input_1").value)
+      console.log(arr)
+      var node = document.createElement("LI")
+      var textnode = document.createTextNode(document.getElementById("input_1").value);
+      node.appendChild(textnode);
+      node.style.cursor = 'pointer'
+      document.getElementById("list_1").appendChild(node)
+      document.getElementById("input_1").value = ''
+
+      for (let i = 0; i < oli.length; i++) {
+        (function (j) {
+          oli[j].onclick = function () {
+            oli[j].remove()
+          };
+        })(i)
+      }
+    }
+  }, false)
+</script>
+</html>
