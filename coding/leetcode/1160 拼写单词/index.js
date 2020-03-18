@@ -4,24 +4,22 @@
  * @return {number}
  */
 var countCharacters = function (words, chars) {
-    let totalLenth = 0
-    chars = [...new Set(chars)]
-    words.forEach((item, index, array) => {
-        let temp = [...new Set(item)]
-        let i = 0;
-        for (i; i < temp.length; i++) {
-            if (chars.toString().indexOf(temp[i]) == -1) {
-                break
-            } else {
-                chars = new Set(chars).delete(temp[i])
-                chars = Array.from(chars)
+    let totalLength=0,flag=false,chars_raw=chars
+    words.forEach((item)=>{
+        for(let i=0;i<item.length;i++){
+            if(chars.indexOf(item[i])==-1){
+                flag=true
+            }else {
+                chars=chars.replace(item[i],0)
             }
         }
-        if (i == temp.length) {
-            totalLenth += item.length
+        if(flag==false){
+            totalLength+=item.length
         }
+        flag=false
+        chars=chars_raw
     })
-    return totalLenth
+    return totalLength
 };
 // console.log(countCharacters(["dyiclysmffuhibgfvapygkorkqllqlvokosagyelotobicwcmebnpznjbirzrzsrtzjxhsfpiwyfhzyonmuabtlwin","ndqeyhhcquplmznwslewjzuyfgklssvkqxmqjpwhrshycmvrb","ulrrbpspyudncdlbkxkrqpivfftrggemkpyjl","boygirdlggnh","xmqohbyqwagkjzpyawsydmdaattthmuvjbzwpyopyafphx","nulvimegcsiwvhwuiyednoxpugfeimnnyeoczuzxgxbqjvegcxeqnjbwnbvowastqhojepisusvsidhqmszbrnynkyop","hiefuovybkpgzygprmndrkyspoiyapdwkxebgsmodhzpx","juldqdzeskpffaoqcyyxiqqowsalqumddcufhouhrskozhlmobiwzxnhdkidr","lnnvsdcrvzfmrvurucrzlfyigcycffpiuoo","oxgaskztzroxuntiwlfyufddl","tfspedteabxatkaypitjfkhkkigdwdkctqbczcugripkgcyfezpuklfqfcsccboarbfbjfrkxp","qnagrpfzlyrouolqquytwnwnsqnmuzphne","eeilfdaookieawrrbvtnqfzcricvhpiv","sisvsjzyrbdsjcwwygdnxcjhzhsxhpceqz","yhouqhjevqxtecomahbwoptzlkyvjexhzcbccusbjjdgcfzlkoqwiwue","hwxxighzvceaplsycajkhynkhzkwkouszwaiuzqcleyflqrxgjsvlegvupzqijbornbfwpefhxekgpuvgiyeudhncv","cpwcjwgbcquirnsazumgjjcltitmeyfaudbnbqhflvecjsupjmgwfbjo","teyygdmmyadppuopvqdodaczob","qaeowuwqsqffvibrtxnjnzvzuuonrkwpysyxvkijemmpdmtnqxwekbpfzs","qqxpxpmemkldghbmbyxpkwgkaykaerhmwwjonrhcsubchs"], "usdruypficfbpfbivlrhutcgvyjenlxzeovdyjtgvvfdjzcmikjraspdfp"))
 console.log(countCharacters(["cat", "bt", "hat", "tree"], "atach"))
