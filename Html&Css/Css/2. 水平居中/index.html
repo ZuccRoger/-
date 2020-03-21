@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .square {
+            height: 200px;
+            width: 200px;
+            background-color: gold;
+            float: left;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            /*transform: translateY(-50%);*/
+            /* 左偏移一半 */
+        }
+
+        span {
+            color: gold;
+            position: absolute;
+            left: 50%;
+            right: 0;
+            transform: translateX(-50%);
+        }
+
+        .test {
+            height: 200px;
+            width: 200px;
+            background-color: gold;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .table {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body style="width: 1000px;height: 1000px">
+<!--<div class="square"></div>-->
+<!--<span>span文字标签</span>-->
+<div class="table"></div>
+</body>
+</html>
