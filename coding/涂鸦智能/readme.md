@@ -12,7 +12,7 @@ var a=function(){
 
 2.  浏览器缓存
 3.  浏览器安全 xss csrf
-4.  浏览器 v8引擎
+4.  浏览器 v8引擎 sort 是怎么排序的
 5.  set map weakmap 以及map和object的区别
 6.  http加密过程 SSL 非对称加密 和 对称加密
 7.  冒泡算法和快速排序算法
