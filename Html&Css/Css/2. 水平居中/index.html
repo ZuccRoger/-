@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,7 +10,7 @@
             width: 200px;
             background-color: gold;
             float: left;
-            position: relative;
+            position: absolute;
             left: 50%;
             transform: translateX(-50%);
             /*transform: translateY(-50%);*/
@@ -34,6 +35,15 @@
             transform: translate(-50%, -50%);
         }
 
+        /* 全局居中
+        */
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .table {
             display: table-cell;
             vertical-align: middle;
@@ -45,11 +55,31 @@
             width: 200px;
             background-color: gold;
         }
+
+        .test1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        /* 全局居中
+        */
+        .test2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: 0 auto;
+        }
     </style>
 </head>
-<body style="width: 1000px;height: 1000px">
-<!--<div class="square"></div>-->
-<!--<span>span文字标签</span>-->
-<div class="table"></div>
+
+<body style='width:1000px;height:1000px'>
+    <div class="test2"></div>
+    <!--<span>span文字标签</span>-->
+    <!-- <div class="table"></div> -->
 </body>
+
 </html>

@@ -40,4 +40,24 @@ http状态码
     getsnapbeforeupdate
     compoenntdidupdate
 
+    TCP/IP的分层管理
+    1.  应用层、传输层、网络层和数据链路层
+        *   应用层决定了向用户提供应用服务时通信的活动。
+            TCP/IP 协议族内预存了各类通用的应用服务。比如：
+            FTP(File Transfer Protocol，文件传输协议)和 DNS(Domain Name System，域 名系统)服务就是其中两类。 HTTP 协议也处于该层。
+        *   传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据 传输。
+            在传输层有两个性质不同的协议:TCP(Transmission Control Protocol，传输控制协议)和 UDP(User Data Protocol，用户数据报 协议)。    
+        *   网络层
+            网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数 据单位
+        *   链路层
+            硬件上的范畴均在 链路层的作用范围之内。
+
+    TCP是确认可靠的 位于传输层 用了三次握手 SYN 和 ACK   
+
+    若在握手过程中某个阶段莫名中断，TCP 协议会再次以相同的顺序发送相同的数据包。
+
+    与 URI(统一资源标识符)相比，我们更熟悉 URL(Uniform Resource Locator，统一资源定位符)。URL 正是使用 Web 浏览器等 访问 Web 页面时需要输入的网页地址。比如，下图的 http://hackr.jp/ 就是URL。
+
+
+
 
