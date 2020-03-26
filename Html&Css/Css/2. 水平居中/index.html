@@ -5,81 +5,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .square {
-            height: 200px;
+        div {
             width: 200px;
-            background-color: gold;
-            float: left;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            /*transform: translateY(-50%);*/
-            /* 左偏移一半 */
-        }
-
-        span {
-            color: gold;
-            position: absolute;
-            left: 50%;
-            right: 0;
-            transform: translateX(-50%);
-        }
-
-        .test {
             height: 200px;
-            width: 200px;
-            background-color: gold;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            background-color: yellow;
         }
 
-        /* 全局居中
-        */
-
-        .flex {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .table {
-            display: table-cell;
-            vertical-align: middle;
+        .center1 {
             text-align: center;
         }
 
-        div {
-            height: 200px;
-            width: 200px;
-            background-color: gold;
-        }
-
-        .test1 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            margin: auto;
-        }
-
-        /* 全局居中
-        */
-        .test2 {
-            position: absolute;
-            top: 0;
-            bottom: 0;
+        .centerBlock1 {
             margin: 0 auto;
+        }
+
+        .centerBlock2 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .centerBlock3 {
+            position: relative;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+        }
+
+        .father1 {
+            text-align: center;
+        }
+
+        .child1 {
+            display: inline-block;
         }
     </style>
 </head>
 
-<body style='width:1000px;height:1000px'>
-    <div class="test2"></div>
-    <!--<span>span文字标签</span>-->
-    <!-- <div class="table"></div> -->
+<body class="father1">
+    <!-- <p class="center1">123</p> -->
+    <!-- <div class="centerBlock1"></div> -->
+    <!-- <div class="centerBlock2"></div> -->
+    <div class="centerBlock3"></div>
+    <!-- <div class="child1"></div> -->
 </body>
 
 </html>

@@ -58,6 +58,30 @@ http状态码
 
     与 URI(统一资源标识符)相比，我们更熟悉 URL(Uniform Resource Locator，统一资源定位符)。URL 正是使用 Web 浏览器等 访问 Web 页面时需要输入的网页地址。比如，下图的 http://hackr.jp/ 就是URL。
 
+---
+
+####    预防 XSS
+1.  cookie 设置HTTP-only
+    *  从而js无法用document.getCookie获取到cookie
+2.  X-XSS-Protectin
+    *   如果是1 则过滤XSS 
+
+---
+
+####    HTTP缺点
+1.  使用明文（不加密）内容可能被监听
+2.  不验证通信方的身份，可能遭遇伪装
+3.  无法证明报文的完整性，可能获得篡改
+
+---
+####    HTTP加密方式
+1.  通信加密
+>   使用SSL和TLS对HTTP加密
+2.  内容加密
+>   
+
+
+
 
 
 
