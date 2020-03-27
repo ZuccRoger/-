@@ -15,3 +15,10 @@ require(url)不会报错
 
 >   es6 map set 和 object
 
+ ---    
+
+ let const 
+ 模版字符串
+ 解构赋值
+ 新增了Set、WeakSet 和 Map、WeakMap
+ 

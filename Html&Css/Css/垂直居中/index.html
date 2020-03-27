@@ -6,22 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* div {
             width: 200px;
             height: 200px;
             background-color: yellow;
-        }
+        } */
 
         .centerBlock1 {
             position: relative;
             margin-top: -100px;
             top: 50%;
         }
+
+        p.test1 {
+            line-height: 200px;
+            /* 对多行文字不友好
+            */
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        ul {
+            display: table;
+            background-color: yellow;
+            height: 1000px;
+        }
+
+        li {
+            display: table-cell;
+            vertical-align: middle;
+            /*
+            table布局
+            */
+        }
+
+        .ul2 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.main {
+            height: 200px;
+            background-color: saddlebrown;
+        }
+
+        div.search {
+            display: inline-block;
+            vertical-align: middle;
+            background-color: red;
+        }
+
+        div.main::after {
+            content:'';
+            display: inline-block;
+            background-color: gold;
+            height: 100%;
+            width: 0px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
-<body style='height: 1000px;'>
-    <div class="centerBlock1"></div>
+<body>
+    <!-- <div class="flex"> -->
+    <!-- <p class="test1">我是test</p> -->
+    <!-- <p>我是test</p> -->
+    <!-- </div> -->
+    <!-- <ul class="ul2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul> -->
+    <div class="main">
+        <div class="search">
+            <form action="">
+                <input type="text">
+                <div><i></i></div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

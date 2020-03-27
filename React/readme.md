@@ -103,3 +103,19 @@
         6.  useLayoutEffect
         7.  useDebugValue
         
+    ---
+9.  #### renderProps
+    >   创建 render props 的方式接收一个外部传递进来的 props 属性m,将内部的 state 作为参数传递给调用组件的 props 属性方法.
+
+10. #### diff算法的原理
+    >   
+
+    ----
+
+11. #### setState 什么时候是同步,什么时候是异步?
+
+>   这里的“异步”不是说异步代码实现. 而是说 react 会先收集变更,然后再进行统一的更新.
+    setState 在原生事件和 setTimeout 中都是同步的. 在合成事件和钩子函数中是异步的.
+在 setState 中, 会根据一个 isBatchingUpdates 判断是直接更新还是稍后更新, 它的默认值是 false. 但是 React 在调用事件处理函数之前会先调用 batchedUpdates 这个函数, batchedUpdates 函数 会将 isBatchingUpdates 设置为 true. 因此, 由 react 控制的事件处理过程, 就变成了异步(批量更新).
+
+12. 
