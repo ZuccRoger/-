@@ -39,29 +39,6 @@ function debounce_new(func, wait) {
         if (callNow) func.apply(context, args)
     }
 }
-
-function debounce(fun, delay = 500,immediate = true) {
-    let timer = null //保存定时器
-    return function (args) {
-        let that = this
-        let _args = args
-		if (timer) clearTimeout(timer);  //不管是否立即执行都需要首先清空定时器
-        if (immediate) {
-		    if ( !timer) fun.apply(that, _args)  //如果定时器不存在,则说明延时已过,可以立即执行函数
-			//不管上一个延时是否完成,都需要重置定时器
-            timer = setTimeout(function(){
-                timer = null; //到时间后,定时器自动设为null,不仅方便判断定时器状态还能避免内存泄露
-            }, delay)
-        }
-        else {
-		//如果是非立即执行版,则重新设定定时器,并将回调函数放入其中
-            timer = setTimeout(function(){
-                fun.call(that, _args)
-            }, delay);
-        }
-    }
-}
-
 // 防抖 双剑合璧版本
 /**
  * @desc 函数防抖
@@ -69,28 +46,31 @@ function debounce(fun, delay = 500,immediate = true) {
  * @param wait 延迟执行毫秒数
  * @param immediate true 表立即执行，false 表非立即执行
  */
-function debounce(func, wait, immediate) {
-    let timeout;
 
-    return function () {
-        let context = this;
-        let args = arguments;
 
-        if (timeout) clearTimeout(timeout);
+function debounce(fun, delay = 500, immediate = true) {
+    let timer = null //保存定时器
+    return function (args) {
+        let that = this
+        let _args = args
+        if (timer) clearTimeout(timer);  //不管是否立即执行都需要首先清空定时器
         if (immediate) {
-            var callNow = !timeout;
-            timeout = setTimeout(() => {
-                timeout = null;
-            }, wait)
-            if (callNow) func.apply(context, args)
+            if (!timer) fun.apply(that, _args)  //如果定时器不存在,则说明延时已过,可以立即执行函数
+            //不管上一个延时是否完成,都需要重置定时器
+            timer = setTimeout(function () {
+                timer = null; //到时间后,定时器自动设为null,不仅方便判断定时器状态还能避免内存泄露
+            }, delay)
         }
         else {
-            timeout = setTimeout(function () {
-                func.apply(context, args)
-            }, wait);
+            //如果是非立即执行版,则重新设定定时器,并将回调函数放入其中
+            timer = setTimeout(function () {
+                fun.call(that, _args)
+            }, delay);
         }
     }
 }
+
+
 
 // 红宝书版本 节流
 // 节流就是将多次执行变成规定时间内 只执行一次 
@@ -107,7 +87,7 @@ function throttle(method, context) {
 //这里fun指的就是回调函数,我就不写出来了
 function throttle(fun, delay = 500) {
     let previous = 0;  //记录上一次触发的时间戳.这里初始设为0,是为了确保第一次触发产生回调
-    return function(args) {
+    return function (args) {
         let now = Date.now(); //记录此刻触发时的时间戳
         let that = this;
         let _args = args;

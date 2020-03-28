@@ -10,6 +10,9 @@
 7.  DVA怎么和HOOK连用
 8.  cookie字段
 9.  application/json xxxwwwformdata 等字段
+    >   application/x-www-form-urlencoded   key&value 经过URL转码
+    >   multipart/form-data 表单上传文件
+    >   application/json 可以方便的提交复杂的结构化数据，特别适合 RESTful 的接口
 10. 有做过ORM吗
 11. httponly是什么意思
 12. cookie什么时候设置 

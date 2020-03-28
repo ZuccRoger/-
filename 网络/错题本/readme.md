@@ -52,4 +52,4 @@
 6.  session
     *   session是基于cookie实现的
     *   session会被存储在服务端，sessionId会被存储在客户端的cookie中
-    *   wow
+    *   分布式很差在

@@ -10,7 +10,7 @@
 3.  ##### table布局
     父元素 display:table
     子元素 display:table-cell
-          vertical-align:middole
+          vertical-align:middle
 
 4.  ##### grid布局
     父元素 display:grid
