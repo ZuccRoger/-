@@ -118,4 +118,6 @@
     setState 在原生事件和 setTimeout 中都是同步的. 在合成事件和钩子函数中是异步的.
 在 setState 中, 会根据一个 isBatchingUpdates 判断是直接更新还是稍后更新, 它的默认值是 false. 但是 React 在调用事件处理函数之前会先调用 batchedUpdates 这个函数, batchedUpdates 函数 会将 isBatchingUpdates 设置为 true. 因此, 由 react 控制的事件处理过程, 就变成了异步(批量更新).
 
-12. 
+12. exact是全匹配的意思
+13. ajax请求数据拦截的地方可以设置在 model 的effect里面 按需记录
+14. 
