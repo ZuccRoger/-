@@ -1,9 +1,9 @@
 # 错题
 ---
-1. 
->   1.块级元素会独占一行,默认情况下,其宽度自动填满其父元素宽度。
+*   1.块级元素会独占一行,默认情况下,其宽度自动填满其父元素宽度。
     行内元素不会独占一行,相邻的行内元素会排列在同一行里,直到一行排不下,才会换行,其宽度随元素的内容而变化。
-2.块级元素的padding和margin值的设置都是有效的。行内元素和块级元素都是盒子模型。
+
+>   2.块级元素的padding和margin值的设置都是有效的。行内元素和块级元素都是盒子模型。
     行内元素的padding-top、padding-bottom、margin-top、margin-bottom属性设置是无效的（top bottom）
     行内元素的padding-left、padding-right、margin-left、margin-right属性设置是有效的（left right）
     行内元素的 line-height 属性设置是有效的。
