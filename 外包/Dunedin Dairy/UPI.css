@@ -1,0 +1,153 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+.ddimg {
+  width: 100px;
+}
+
+.header div {
+  height: 100px;
+  line-height: 100px;
+  width: 50px;
+  font-size: 0px;
+  text-align: center;
+}
+.header div img {
+  width: 50px;
+  vertical-align: middle;
+}
+.header div:hover {
+  cursor: pointer;
+  background-color: #fafafa;
+  height: 100px;
+  vertical-align: middle;
+}
+hr {
+  height: 2px;
+  background-color: black;
+}
+.imgCenter {
+  text-align: center;
+}
+.imgCenter img {
+  width: 100%;
+}
+.imgCenter hr {
+  width: 50%;
+}
+.productItem {
+  display: flex;
+}
+.productImg {
+  width: 180px;
+  position: ;
+}
+.productItem p {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+.productItem div {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.productItem button {
+  width: 120px; 
+  height: 40px; 
+  border-width: 0px; 
+  border-radius: 3px; 
+  background: gray;
+  cursor: pointer; 
+  outline: none;
+  font-family: Microsoft YaHei; 
+  color: white;
+  font-size: 17px; 
+}
+.productHr {
+  width: 50%;
+  height: 1px;
+}
+#productSearch {
+  width: 100%;
+  background-color: #bdbdbd;
+}
+.search {
+  position: relative;
+  width: 98%;
+}
+.search img {
+  position: absolute;
+  width: 20px;
+  top: 3px;
+}
+.newsItem {
+  margin: 0 20px;
+}
+.newsItem img {
+  width: 120px;
+  height: 200px;
+  margin: 10px;
+}
+.newsItem a {
+  font-size: 12px;
+}
+.newsItem div p {
+  display: inline;
+}
+#newsItem hr {
+  height: 0.2px;
+}
+.locationAdd {
+  background-color: #eeeeee;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
+}
+.Location p {
+  cursor: pointer;
+}
+.inline :nth-child(2) {
+  margin-left: 120px;
+}
+.inline p {
+  display: inline;
+}
+.inputBox {
+  background-color: #bdbdbd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px 0;
+  margin: 0px 30px;
+}
+.inputBox textarea:nth-child(1) {
+  width: 80%;
+  height: 100px;
+  background-color: #eeeeee;
+}
+.inputBox div {
+  width: 80%;
+  margin: 0 auto;
+}
+.inputBox button {
+  border: none;
+  outline: none;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.inputBox button img {
+  padding-top: 10px;
+  width: 20px;
+  cursor: pointer;
+}
+.inputBox div input {
+  background-color: #eeeeee;
+  width: 70%;
+}
+.GuestBook hr:nth-child(6) {
+  width: 50%;
+  height: 0.2px;
+}

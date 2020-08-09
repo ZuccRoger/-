@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="250">
+      您的浏览器不支持 Canvas
+    </canvas>
+  </body>
+  <script>
+    /** @type {HTMLCanvasElement} */
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var posX = 20;
+    var posY = 100;
+    setInterval(function () {
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      posX += 1;
+      posY += 0.25;
+      ctx.beginPath();   
+      ctx.fillStyle = "white";
+      ctx.arc(posX, posY, 10, 0, Math.PI * 2, true);
+      ctx.closePath();
+      ctx.fill();
+    }, 30);
+  </script>
+</html>

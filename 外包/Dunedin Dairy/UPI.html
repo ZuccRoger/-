@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="UPI.css" />
+    <title>Dunedin Dairy</title>
+    <script src="./UPI.js"></script>
+    <script>
+      window.onload = function () {
+        document.querySelector("#DunedinDairy").style.display = "block";
+        document.querySelector("#Products").style.display = "none";
+        document.querySelector("#News").style.display = "none";
+        document.querySelector("#Location").style.display = "none";
+        document.querySelector("#GuestBook").style.display = "none";
+        document
+          .getElementById("productSearch")
+          .addEventListener("input", function () {
+            if (this.value.length > 0) {
+              document.getElementById("searchMacro").style.display = "none";
+              searchProduct(this.value);
+            } else {
+              document.getElementById("searchMacro").style.display = "block";
+            }
+          });
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="header">
+      <img
+        src="http://redsox.uoa.auckland.ac.nz/ds/logo-192x192.png"
+        alt=""
+        class="ddimg"
+      />
+      <div onclick="handleTabClick('home')">
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/home.png" alt="" />
+      </div>
+      <div onclick="handleTabClick('cart')">
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/cart.png" alt="" />
+      </div>
+      <div onclick="handleTabClick('news')">
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/news.png" alt="" />
+      </div>
+      <div onclick="handleTabClick('location')">
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/ding.png" alt="" />
+      </div>
+      <div>
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/woman.png" alt="" />
+      </div>
+      <div onclick="handleTabClick('guest')">
+        <img src="
+        https://q2020.oss-cn-beijing.aliyuncs.com/Book.png" alt="" />
+      </div>
+    </div>
+    <div class="DunedinDairy" id="DunedinDairy">
+      <h1>Dunedin Dairy</h1>
+      <hr />
+      <p>
+        Welcome to Goat Island Dairy! We pride ourselves on making milk the way
+        you'd like to see it made. Green grass, a happy herd, and delivered to
+        you in glass Welcome to Goat Island Dairy! We pride ourselves on making
+        milk the way you'd like to see it made. Green grass, a happy herd, and
+        delivered to you in glass Welcome to Goat Island Dairy! We pride
+        ourselves on making milk the way you'd like to see it made. Green grass,
+        a happy herd, and delivered to you in glass
+      </p>
+      <div class="imgCenter">
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/sacredcow.jpg" alt="" />
+        <p>Hannah Kidd - Sacred Cow (2019) Miliform Galleries Dunedin</p>
+        <hr />
+        <p>All rights reserved V1.0.0</p>
+      </div>
+    </div>
+    <div class="Products" id="Products">
+      <h1>Products</h1>
+      <hr />
+      <div class="search">
+        <input type="text" id="productSearch" onchange="hideSearchImg()" />
+        <img src="https://q2020.oss-cn-beijing.aliyuncs.com/macro.png" id="searchMacro" alt="" />
+      </div>
+      <div class="productList"></div>
+    </div>
+    <div class="News" id="News">
+      <h1>News</h1>
+      <hr />
+      <div id="newsList"></div>
+    </div>
+    <div class="Location" id="Location">
+      <h1>Location</h1>
+      <hr />
+      <img
+        src="http://redsox.uoa.auckland.ac.nz/ds/map.png"
+        alt=""
+        style="width: 95%;"
+      />
+      <div class="locationAdd">
+        <p>535 Pine Hill Road Dunedin New Zealand</p>
+        <div class="inline">
+          <p>info@DunedinDairy.co.nz</p>
+          <p>+644 3 448 6256</p>
+        </div>
+        <p>Add us to your address book</p>
+      </div>
+    </div>
+    <div class="GuestBook" id="GuestBook">
+      <h1>Guest Book</h1>
+      <hr />
+      <b>Please sign our guest book</b>
+      <p>Cheesy comments are OK so long as they aren't cheesy</p>
+      <div class="inputBox">
+        <textarea
+          type="text"
+          placeholder="Your comments here"
+          id="comments"
+        ></textarea>
+        <div>
+          <label>Your name:</label>
+          <input type="text" id="recordName" />
+          <button onclick="submitForm()">
+            <img src="https://q2020.oss-cn-beijing.aliyuncs.com/rightArr.png" alt="" srcset="" />
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="recentEntries">
+        <h3>Recent Entries</h3>
+        <div id="recentList"></div>
+      </div>
+    </div>
+  </body>
+</html>
