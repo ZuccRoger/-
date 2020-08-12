@@ -3,7 +3,6 @@
  * @param {type} 
  * @return {type} 
  */
-jQuery.support.cors = true;
 const tileNumList = [
     "A",
     "B",
@@ -201,7 +200,7 @@ let prevBoard = ['', '', '', '', '', '', '']
 let positionArr = []
 let score = 0
 let highestScore = 0
-let dict = []
+let dict = [] // dictArr
 
 $(window).load(function() {
     initTileBoard();
@@ -216,7 +215,6 @@ $(window).load(function() {
             for (var i = 0; i < words.length; ++i) {
                 dict.push([words[i].toUpperCase()]);
             }
-            console.log('dict', dict)
         }
     });
     $(".square").droppable({
@@ -224,11 +222,11 @@ $(window).load(function() {
         activeClass: "dragHighlight",
         hoverClass: "hoverHighlight",
         drop: function(event, ui) {
-
             let str = event.target.id
             let index = str[str.length - 1] - 1
             if (isBoardValidate(index)) {
                 $(event.toElement).css('display', 'none')
+
                 let letter = ui.draggable.attr("letter")
                 let newTile = $(`<img src=${scrabbleTiles[letter]["image"]} class="dragItem" letter=${letter} />`);
                 $(this).append(newTile)
@@ -282,19 +280,31 @@ function culculateScore(Board) {
     if (word.length >= 2) {
         $('#oneWordCheckIcon').removeClass('instructionIcon')
         $('#minLengthIcon').removeClass('instructionIcon')
+        for (let i = 0; i < dict.length; i++) {
+            if (dict[i][0].indexOf(word) > -1) {
+                $('#dictionaryCheckIcon').removeClass('instructionIcon')
+                if ($('.instructionIcon').length == 0) {
+                    $("#nextWordButton").attr('disabled', false);
+                }
+            } else if (i == dict.length) {
+                $('#dictionaryCheckIcon').addClass('instructionIcon')
+            }
+        }
     } else {
         $('#oneWordCheckIcon').addClass('instructionIcon')
         $('#minLengthIcon').addClass('instructionIcon')
     }
-    for (let i = 0; i < Board.length; i++) {
-        if (Board[i] != prevBoard[i]) {
-            if (i == 1 || i == 5) {
-                score += (scrabbleTiles[Board[i]].value) * 2
-            } else {
-                score += scrabbleTiles[Board[i]].value
+
+    if (dict.indexOf(word))
+        for (let i = 0; i < Board.length; i++) {
+            if (Board[i] != prevBoard[i]) {
+                if (i == 1 || i == 5) {
+                    score += (scrabbleTiles[Board[i]].value) * 2
+                } else {
+                    score += scrabbleTiles[Board[i]].value
+                }
             }
         }
-    }
     prevBoard = JSON.parse(JSON.stringify(Board))
         // console.log('score', score)
     $('#score').html(`<span>${score}</span>`)
@@ -382,12 +392,39 @@ function recycleHand() {
 
 
 /**
- * @description: game next
+ * @description: game next 洗牌流程
  * @param {type} 
  * @return {type} 
  */
 function nextWord() {
-
+    console.log('nextWord')
+    $('.dragItem.ui-draggable.ui-draggable-handle').each(function() {
+        let flag = 0
+        $.each(this.attributes, function() {
+            if (this.name == 'style' && this.value.indexOf('none') > -1) {
+                flag = 1
+            }
+        });
+        if (flag == 0) {
+            $.each(this.attributes, function() {
+                if (this.name === 'letter') {
+                    console.log(scrabbleTiles[this.value].currCount)
+                    scrabbleTiles[this.value].currCount++; //recycle tiles
+                    console.log(scrabbleTiles[this.value].currCount)
+                }
+            });
+        }
+    });
+    $('.tileRack').empty()
+    $('.dragItem').remove()
+    $('#oneWordCheckIcon').addClass('instructionIcon')
+    $('#minLengthIcon').addClass('instructionIcon')
+    $('#dictionaryCheckIcon').addClass('instructionIcon')
+    $("#nextWordButton").attr('disabled', true);
+    highestScore += score
+    $('#highest').html(`<span>${highestScore}</span>`)
+    $('#score').html(`<span>0</span>`)
+    initTileBoard()
 }
 
 /**
@@ -406,6 +443,4 @@ function reset() {
  */
 function Random(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
-}
-return Math.round(Math.random() * (max - min)) + min;
 }

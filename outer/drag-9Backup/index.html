@@ -67,22 +67,21 @@
         </div>
         <div class="flex-around">
             <span>
-                <span>word:</span>
+          <span>word:</span>
             <span id="word"></span>
             </span>
             <span>
-                <span>score:</span>
+          <span>score:</span>
             <span id="score">0</span>
             </span>
             <span>
-            <span>Hightest Score:</span>
-            <span id="highest"></span>
+          <span>Hightest Score:</span>
+            <span id="highest">0</span>
             </span>
             <span>
-                <span>Remaining Tiles:</span>
+          <span>Remaining Tiles:</span>
             <span id="remain"></span>
             </span>
-
         </div>
         <hr />
     </div>
@@ -102,7 +101,9 @@
     </div>
 
     <div style="text-align: center;">
-        <button id="nextWordButton" onclick="nextWord()">next word</button>
+        <button id="nextWordButton" onclick="nextWord()" disabled="disabled">
+        next word
+      </button>
         <button id="resetButton" onclick="reset()">start over</button>
     </div>
     <div class="tileRack"></div>
