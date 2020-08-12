@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <style>
+        #A {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        #B {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+
+
+    <body>
+        <img src="http://redsox.uoa.auckland.ac.nz/ds/logo-192x192.png" dragenter="nodeOnDropEnter(event)" id="A" draggable="true" ondragover="nodeOnDragOver(event)" ondrop="nodeOnDrop(event)" />
+        <div id="B" draggable="true"></div>
+    </body>
+    <script>
+        let node = document.querySelector('#A')
+        let nodeB = document.querySelector('#B')
+        console.log(node)
+
+        function nodeOnDropEnter(e) {
+            e.preventDefault()
+            console.log('nodeOnDropEnter')
+        }
+
+
+        function nodeOnDragOver(e) {
+            e.preventDefault()
+            console.log('nodeOnDropOver')
+        }
+
+        function nodeOnDrop(e) {
+            console.log('sb闲鱼卖家')
+        }
+        // node.addEventListener('dragstart', function(e) {
+        //     console.log('dragStart')
+        //     nodeB.style.border = "10px solid yellow"
+        // })
+        // node.addEventListener('dragend', function(e) {
+        //     console.log('dragend')
+        // })
+        // node.addEventListener('drop', function(e) {
+        //     e.preventDefault()
+        //     console.log('drop')
+        //     nodeB.style.border = "none"
+        // })
+        nodeB.addEventListener('dragenter', function(e) {
+            nodeB.style.border = "10px solid black"
+        })
+        nodeB.addEventListener('dragleave', function(e) {
+            nodeB.style.border = "none"
+        })
+    </script>
+
+</html>
+
 </html>
