@@ -208,11 +208,7 @@ $(window).load(function() {
     $.ajax({
         url: "http://yongcho.github.io/GUI-Programming-1/assignment9/dictionary.txt",
         success: function(result) {
-            // Get an array of all the words.
             var words = result.split("\n");
-            // Add them as properties to the dictionary lookup object.
-            // This will allow for fast lookups later. All words are converted to capital letters
-            // to make things simple since Scrabble is case insensitive.
             for (var i = 0; i < words.length; ++i) {
                 dict.push([words[i].toUpperCase()]);
             }
@@ -634,7 +630,7 @@ function initTiles() {
 
 function initSpace() {
     $('#spaceReplace').removeClass('none')
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 26; i++) {
         let letter = tileNumList[i]
         if (Tiles[letter].currCount > 0) {
             $('#spaceReplace').append($(`<img src=${Tiles[letter]["image"]} onClick="onSpareClick(${"'"+letter+"'"})" class="dragItem" letter=${letter} />`))

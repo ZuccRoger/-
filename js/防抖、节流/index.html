@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <title>Document</title>
+    <script>
+        let prevTime = 0;
+        //input onchange 只有失去焦点才会触发
+        function inputA(e) {
+            console.log(e.target.value);
+            if (prevTime && Date.now() - prevTime < 3000) {
+                clearTimeout(clockA);
+                clockA(e);
+            }
+            prevTime = Date.now();
+        }
+
+        function clockA(e) {
+            setTimeout(() => {
+                let para = document.createElement("p");
+                // para.innerText = e.target.value;
+                // insertAfter(para, document.querySelector("#B"));
+            }, 3000);
+        }
+
+        // function insertAfter(newElement, targetElement) {
+        //     var parent = targetElement.parentNode;
+        //     if (parent.lastChild == targetElement) {
+        //         parent.appendChild(newElement);
+        //     } else {
+        //         parent.insertBefore(newElement, targetElement.nextSibling);
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+    <input id="A" type="text" oninput="inputA(event)" />
+    <input id="B" type="text" />
+</body>
+<footer>
+    <nav>
+        <a href="">link</a>
+    </nav>
+</footer>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue响应式原理</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <button>按钮</button>
+        <h1 id="title"></h1>
+    </div>
+
+    <script type="text/javascript">
+        var title = document.getElementById('title');
+        var btn = document.querySelector("button");
+
+        var data = {
+            title: '我是标题',
+            con: '我是内容'
+        }
+        k(data)
+        title.innerHTML = data.title;
+
+        //劫持数据
+        function k(obj) {
+            Object.keys(obj).forEach(function(item) {
+                defineReactive(obj, item, obj[item])
+            });
+        }
+
+        function defineReactive(obj, key, val) {
+            Object.defineProperty(obj, key, {
+                set: function(newVal) {
+                    val = newVal
+                    title.innerHTML = newVal;
+                },
+                get: function() {
+                    return val
+                }
+            })
+        }
+
+
+        var i = 0;
+
+        btn.addEventListener("click", function() {
+            i++;
+            data.title += i;
+            console.log(data)
+        });
+    </script>
+</body>
+
+</html>

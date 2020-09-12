@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,7 +10,7 @@
             width: 25%;
             float: left;
         }
-
+        
         .clearfix::after {
             content: '';
             display: block;
@@ -17,24 +18,26 @@
         }
     </style>
 </head>
+
 <body>
-<div style="width: 300px;padding: 10px;background-color: #fae8c8;" class="clearfix">
-    <!--    或者 外层div overflow:hidden||auto 形成BFC
+    <div style="width: 300px;padding: 10px;background-color: #fae8c8;" class="clearfix">
+        <!--    或者 外层div overflow:hidden||auto 形成BFC
                 或者外层 div 设置 float: 影响布局 比较局限
     -->
-    <span><a href="">1</a></span>
-    <span><a href="">2</a></span>
-    <span><a href="">3</a></span>
-    <span><a href="">4</a></span>
-    <span><a href="">5</a></span>
-    <span><a href="">6</a></span>
-    <span><a href="">7</a></span>
-    <span><a href="">8</a></span>
-    <span><a href="">9</a></span>
-    <span><a href="">10</a></span>
-    <!--    <p>给这个元素创建clear:both</p>-->
-</div>
+        <span><a href="">1</a></span>
+        <span><a href="">2</a></span>
+        <span><a href="">3</a></span>
+        <span><a href="">4</a></span>
+        <span><a href="">5</a></span>
+        <span><a href="">6</a></span>
+        <span><a href="">7</a></span>
+        <span><a href="">8</a></span>
+        <span><a href="">9</a></span>
+        <span><a href="">10</a></span>
+        <!--    <p>给这个元素创建clear:both</p>-->
+    </div>
 </body>
+
 </html>
 
 <!--或者用 伪元素-->

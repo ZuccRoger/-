@@ -15,38 +15,46 @@
     <nav>
         <ul>
             <li>
-                <a href="https://erdune.github.io/GUI-Programming-1-HW4/my.html">Home</a>
-            </li>
-            <li id="Assignments">
-                <a href="#">Assignments</a>
+                <a href="https://erdune.github.io/GUI-Programming-1-HW4/my.html">Home</a
+          >
+        </li>
+        <li id="Assignments">
+          <a href="#">Assignments</a>
                 <ul class="assignList">
                     <li>
                         <a href=" http://cs.uml.edu/~ee/index.html">Assignment 2</a>
                     </li>
                     <li><a href="">Assignment 3</a></li>
                     <li>
-                        <a href="https://erdune.github.io/GUI-Programming-1-HW4/my.html">Assignment 4</a>
-                    </li>
-                    <li>
-                        <a href="https://erdune.github.io/GUI-Programming-1-HW5/">Assignment 5</a>
-                    </li>
-                    <li>
-                        <a href="https://erdune.github.io/GUI-Programming-1-HW6/">Assignment 6</a>
-                    </li>
-                    <li>
-                        <a href="https://erdune.github.io/GUI-Programming-1-HW7/">Assignment 7</a>
-                    </li>
-                    <li><a href="">Assignment 8</a></li>
+                        <a href="https://erdune.github.io/GUI-Programming-1-HW4/my.html">Assignment 4</a
+              >
+            </li>
+            <li>
+              <a href="https://erdune.github.io/GUI-Programming-1-HW5/"
+                >Assignment 5</a
+              >
+            </li>
+            <li>
+              <a href="https://erdune.github.io/GUI-Programming-1-HW6/"
+                >Assignment 6</a
+              >
+            </li>
+            <li>
+              <a href="https://erdune.github.io/GUI-Programming-1-HW7/"
+                >Assignment 7</a
+              >
+            </li>
+            <li><a href="">Assignment 8</a></li>
                 </ul>
             </li>
         </ul>
         <!-- A horizontal line below the menu -->
         <div id="navUnderline"></div>
     </nav>
-    <h3>Assignment 8:Implementing a Bit of Scrabble with Drag-and-Drop</h3>
-    <h3>
+    <h2>Assignment 8:Implementing a Bit of Scrabble with Drag-and-Drop</h2>
+    <h4>
         Make the following letter tiles into a tile rack so that it forms a word
-    </h3>
+    </h4>
     <div style="text-align: center;">
         <div class="flexCenter" id="board">
             <div class="square" id="board1"></div>
@@ -59,51 +67,48 @@
         </div>
         <div class="flex-around">
             <span>
-                <span>word:</span>
-                <span id="word"></span>
+          <span>word:</span>
+            <span id="word"></span>
             </span>
             <span>
-                <span>score:</span>
-                <span id="score">0</span>
+          <span>score:</span>
+            <span id="score">0</span>
             </span>
             <span>
-                <span>Hightest Score:</span>
-                <span id="highest">0</span>
+          <span>Hightest Score:</span>
+            <span id="highest">0</span>
             </span>
             <span>
-                <span>Remaining Tiles:</span>
-                <span id="remain"></span>
+          <span>Remaining Tiles:</span>
+            <span id="remain"></span>
             </span>
         </div>
         <hr />
     </div>
     <div class="midArea">
         <b>Hints</b>
-        <ol>
-            <li>
-                1.Create one word with no gap between letters.<img id="oneWordCheckIcon"
-                    src="./public/images/checkIcon.png" class="instructionIcon" alt="Checked" />
-            </li>
-            <li>
-                2.The word must contain at least 2 letters.<img id="minLengthIcon" src="./public/images/checkIcon.png"
-                    class="instructionIcon" alt="Checked" />
-            </li>
-            <li>
-                3.The word must be found in the dictionary.<img id="dictionaryCheckIcon"
-                    src="./public/images/checkIcon.png" class="instructionIcon" alt="Checked" />
-            </li>
-        </ol>
+        <p>
+            1.Create one word with no gap between letters.<img id="oneWordCheckIcon" src="./public/images/checkIcon.png" class="instructionIcon" alt="Checked" />
+        </p>
+        <p>
+            2.The word must contain at least 2 letters.<img id="minLengthIcon" src="./public/images/checkIcon.png" class="instructionIcon" alt="Checked" />
+        </p>
+        <p>
+            3.The word must be found in the dictionary.<img id="dictionaryCheckIcon" src="./public/images/checkIcon.png" class="instructionIcon" alt="Checked" />
+        </p>
     </div>
-    <div id="spaceReplace" class="none">
-
-    </div>
+    <div id="spaceReplace" class="none"></div>
     <div style="text-align: center;">
         <button id="nextWordButton" onclick="nextWord()" disabled="disabled">
-            next word
-        </button>
+        next word
+      </button>
         <button id="resetButton" onclick="reset()">start over</button>
     </div>
-    <div class="tileRack"></div>
+    <div></div>
+    <div class="tileRackOuter">
+        <div class="tileRack"></div>
+    </div>
+
     <footer>
         <span>&copy;2020 AuthorName</span>
     </footer>
